@@ -26,7 +26,7 @@ export class AppComponent {
 
     console.log(data);
     this.vetbuca = [];
-    for (const iterator of data['Buche']){
+    for (const iterator of data['buche']){
       let m:  google.maps.MarkerOptions = {
         position: new google.maps.LatLng(iterator.lat, iterator.lng)
       }
@@ -34,7 +34,7 @@ export class AppComponent {
     }
   }
   ngOnInit(){
-    this.obsBuche = this.http.get<Buche[]>("https://5000-lime-sailfish-9mai3awf.ws-eu21.gitpod.io/all")
+    this.obsBuche = this.http.get<Buche[]>("https://5000-lime-sailfish-9mai3awf.ws-eu23.gitpod.io/all")
     this.obsBuche.subscribe(this.visbuche)
   }
 
